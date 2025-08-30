@@ -1,0 +1,32 @@
+
+/* Pipschool scroll-based "come up" animation */
+/* Drop this in your main CSS or link this file */
+
+@keyframes comeUp {
+  from { opacity: 0; transform: translateY(var(--reveal-distance, 24px)); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal-on-scroll {
+  --reveal-distance: 24px;
+  --reveal-duration: 700ms;
+  --reveal-ease: cubic-bezier(.21,1,.21,1);
+  opacity: 0;
+  transform: translateY(var(--reveal-distance)) translateZ(0); /* translateZ(0) helps on Safari/iOS */
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.is-visible {
+  animation: comeUp var(--reveal-duration) var(--reveal-ease) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll.is-visible {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
