@@ -15,11 +15,9 @@ img{max-width:100%;display:block}
 
 .nav{
   position:sticky;top:0;z-index:50;
-  backdrop-filter: blur(0px);
-  background:linear-gradient(180deg, #05092e, #05092e00);
-  border: 0px solid #e2ca68;  
+  background:linear-gradient(180deg, #05092e, #05092e00);  
   border-radius: 15px;
-  width: 1330px;
+  width: 100%;
   margin-left: 10px;
   
  
@@ -196,7 +194,7 @@ footer{padding:30px 0;color:#c0c0c0;
 .foot{
   display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between
 }
-.foot small a{color:#9b8b4a;text-decoration:underline dotted;}
+
 .footer-main {
   display: flex;
   flex-wrap: wrap;
@@ -322,30 +320,128 @@ footer{padding:30px 0;color:#c0c0c0;
   50%{opacity:1;transform:translateY(-3px)}
 }
 
-/* ============ Responsive ============ */
-@media (max-width: 980px){
-  .hero-grid,.grid-2{grid-template-columns:1fr}
-  .nav-links{display:none}
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* ---------- Tablets & Below (<= 980px) ---------- */
+@media (max-width: 980px) {
+  /* Navigation */
+  .nav {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+  }
+  .nav-links {
+    display: none; /* Reserved for future hamburger toggle */
+  }
+
+  /* Hero Section */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .full-logo {
+    width: 80%;
+    height: auto;
+    margin: 0 auto 20px;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+  .chart {
+    margin-top: 20px;
+  }
+
+  /* Two-column grids collapse to one column */
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
 }
-@media (max-width: 760px){
-  .grid-3,.pricing{grid-template-columns:1fr}
-  .kpi{grid-template-columns:1fr 1fr 1fr}
-  .title{font-size:clamp(1.8rem, 7vw, 3rem)}
-}
 
-
-
-/* Mobile responsiveness */
+/* ---------- Mobile Devices (<= 768px) ---------- */
 @media (max-width: 768px) {
+  /* Typography */
+  body {
+    font-size: 14px;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* KPI Pills - compact layout */
+  .kpi {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* Cards and grids collapse */
+  .grid-3,
+  .pricing,
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Footer adjustments */
   .footer-main {
     flex-direction: column;
+    text-align: center;
   }
   .footer-links {
     flex-direction: column;
+    align-items: center;
+  }
+  .social-icons {
+    justify-content: center;
+    padding-left: 0;
   }
   .footer-bottom {
+    flex-direction: column;
     text-align: center;
+    gap: 10px;
   }
 }
 
+/* ---------- Small Mobile Devices (<= 480px) ---------- */
+@media (max-width: 480px) {
+  /* Hero buttons full width */
+  .cta form .emailbox {
+    max-width: 180px;
+    min-width: 70px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
 
+  /* Pills sizing */
+  .pill {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  /* Footer logo scaling */
+  .footer-brand .logo-silver {
+    max-width: 140px;
+  }
+
+  /* Social icons slightly smaller */
+  .sm-icon {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+/* ---------- Title & KPI Tweaks (<= 760px) ---------- */
+@media (max-width: 760px) {
+  /* Title font size adapts */
+  .title {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+  }
+
+  /* KPI layout reflow */
+  .kpi {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
