@@ -136,6 +136,7 @@ section{padding:70px 0;border-bottom:1px solid #9b8b4a70}
 /* Curriculum */
 .grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
 .list{display:grid;gap:10px}
+
 .list .row{
   display:flex;gap:12px;align-items:start;padding:14px;border-radius:12px;
   border:1px solid #ffffff2a;  background:linear-gradient(180deg, #ffffff0b, #ffffff05);box-shadow:0 10px 30px rgba(0,0,0,.45);
@@ -211,9 +212,9 @@ footer{padding:30px 0;color:#c0c0c0;
 }
 .social-icons {
   display: flex;
-  flex-wrap: wrap;
+ 
   gap: 40px;
-  padding-left: 43px;
+  margin-left: 34%;
 }
 .sm-icon {
   height: 40px;
@@ -329,11 +330,14 @@ footer{padding:30px 0;color:#c0c0c0;
   /* Navigation */
   .nav {
     width: 100%;
-    margin-left: 0;
-    border-radius: 0;
+    padding-left: 33%;
+   border-radius: 0;
   }
   .nav-links {
     display: none; /* Reserved for future hamburger toggle */
+  }
+  .subtitle {
+    margin-left: 18%;
   }
 
   /* Hero Section */
@@ -351,6 +355,10 @@ footer{padding:30px 0;color:#c0c0c0;
   }
   .chart {
     margin-top: 20px;
+    display: none;
+  }
+  .social-icons{
+    margin-left: 27%;
   }
 
   /* Two-column grids collapse to one column */
@@ -365,10 +373,18 @@ footer{padding:30px 0;color:#c0c0c0;
   body {
     font-size: 14px;
   }
+  .nav {
+    padding-left: 28%;
+   
+  }
   .subtitle {
     font-size: 0.95rem;
+    margin-left: 16%;
+  
   }
-
+.social-icons{
+    margin-left: 4%;
+  }
   /* KPI Pills - compact layout */
   .kpi {
     grid-template-columns: 1fr 1fr;
@@ -391,6 +407,8 @@ footer{padding:30px 0;color:#c0c0c0;
   .footer-links {
     flex-direction: column;
     align-items: center;
+    position: relative;
+    bottom: 60px;
   }
   .social-icons {
     justify-content: center;
@@ -400,12 +418,41 @@ footer{padding:30px 0;color:#c0c0c0;
     flex-direction: column;
     text-align: center;
     gap: 10px;
+    
+  }
+  .logo-silver {
+    position: relative;
+    left: 37%;
+  }
+}
+@media (max-width: 600px) {
+ .nav {
+    padding-left: 22%;
+   
+  }
+  .subtitle {
+    font-size: 0.95rem;
+    margin-left: 4%;
+  
+  }
+ .logo-silver {
+    position: relative;
+    left: 32%;
   }
 }
 
 /* ---------- Small Mobile Devices (<= 480px) ---------- */
 @media (max-width: 480px) {
   /* Hero buttons full width */
+   .nav {
+    padding-left: 20%;
+   
+  }
+  .logo{
+  
+  width:250px;height:80px;
+
+  }
   .cta form .emailbox {
     max-width: 180px;
     min-width: 70px;
@@ -428,8 +475,8 @@ footer{padding:30px 0;color:#c0c0c0;
 
   /* Social icons slightly smaller */
   .sm-icon {
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
   }
 }
 
