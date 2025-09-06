@@ -13,6 +13,7 @@
   
 </head>
 <body>
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">⌃</button>
   <!-- NAV -->
  <header class="nav">
   <div class="container nav-inner">
@@ -299,6 +300,7 @@
 </div>
      <br>
   </section>
+  
   <section class="footer-bottom">
     <p>© 2025 PIP School. All rights reserved.</p>
     <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
@@ -314,6 +316,23 @@
     navLinks.classList.toggle("active");
   });
 </script>
+<script>
+// Show button after scrolling down 100px
+window.onscroll = function() { toggleScrollButton() };
 
+function toggleScrollButton() {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+}
+
+// Scroll smoothly to top when button is clicked
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
