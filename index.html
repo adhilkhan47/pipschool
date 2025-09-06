@@ -10,28 +10,32 @@
   <meta name="theme-color" content="#0a0f1f" />
   <link rel="stylesheet" href="pipschool.css">
   <link rel="stylesheet" href="pipschool-reveal.css">
-
+  
 </head>
-
 <body>
   <!-- NAV -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <div>
-        <div class="brand">
-          <img class="logo" aria-hidden="true" src="pipschool-logo.jpg">
-        
-        </div>
-        
-      </div>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#why" class="btn"><b>WHY PIP?</b></a>
-        <a href="#curriculum" class="btn"><b>CURRICULUM</b></a>
-        <a href="#pricing" class="btn"><b>PRICING</b></a>
-        <a href="#apply" class="btn"><b>JOIN NOW</b></a>
-      </nav>
+ <header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <img class="logo" aria-hidden="true" src="pipschool-logo.jpg" alt="Pip School Logo">
     </div>
-  </header>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#why" class="btn"><b>WHY PIP?</b></a>
+      <a href="#curriculum" class="btn"><b>CURRICULUM</b></a>
+      <a href="#pricing" class="btn"><b>PRICING</b></a>
+      <a href="#apply" class="btn"><b>JOIN NOW</b></a>
+    </nav>
+  </div>
+</header>
 
   <!-- HERO -->
   <section class="hero">
@@ -302,5 +306,14 @@
   <br>
   </footer>
 <script src="pipschool-reveal.js"></script>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>
