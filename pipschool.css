@@ -27,6 +27,7 @@ img{max-width:100%;display:block}
   
  
 }
+.hamburger{display: none;}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.4px}
 .logo{
@@ -335,9 +336,15 @@ footer{padding:30px 0;color:#c0c0c0;
   /* Navigation */
   .nav {
     width: 100%;
-    padding-left: 33%;
+    padding-left: 5%;
    border-radius: 0;
   }
+    .logo{
+  
+  width:220px;height:70px;
+
+  }
+ 
   .nav-links {
     display: none; /* Reserved for future hamburger toggle */
   }
@@ -370,6 +377,62 @@ footer{padding:30px 0;color:#c0c0c0;
   .grid-2 {
     grid-template-columns: 1fr;
   }
+  /* Hamburger button */
+.hamburger {
+  position: relative;
+  right: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #9b8b4a;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mobile menu */
+@media (max-width: 980px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #05092e;
+    border: 1px solid rgba(155, 139, 74, 0.5);
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    width: 220px;
+    height: 240px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    text-align: right;
+    display: block;
+  }
+}
+
 }
 
 /* ---------- Mobile Devices (<= 768px) ---------- */
@@ -379,7 +442,7 @@ footer{padding:30px 0;color:#c0c0c0;
     font-size: 14px;
   }
   .nav {
-    padding-left: 28%;
+    padding-left: 5%;
    
   }
   .subtitle {
@@ -432,8 +495,13 @@ footer{padding:30px 0;color:#c0c0c0;
 }
 @media (max-width: 600px) {
  .nav {
-    padding-left: 22%;
+    padding-left: 5%;
    
+  }
+   .logo{
+  
+  width:185px;height:60px;
+
   }
   .subtitle {
     font-size: 0.95rem;
@@ -450,12 +518,12 @@ footer{padding:30px 0;color:#c0c0c0;
 @media (max-width: 480px) {
   /* Hero buttons full width */
    .nav {
-    padding-left: 20%;
+    padding-left: 5%;
    
   }
   .logo{
   
-  width:250px;height:80px;
+  width:155px;height:50px;
 
   }
   .cta form .emailbox {
