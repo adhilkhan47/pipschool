@@ -2,21 +2,25 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
      *{box-sizing:border-box;margin:0;padding:0}
 
-@keyframes apear {
-from {
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.card, .row, .side-note, .price, .cta h2, .cta p, form {
   opacity: 0;
   transform: scale(0.5);
- }
-to {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.card.visible, .row.visible, .side-note.visible, .price.visible, .cta h2.visible, .cta p.visible, form.visible {
   opacity: 1;
   transform: scale(1);
- }
-}
- .card, .row, .side-note, .price, .cta h2, .cta p, form {
-  animation: apear  linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 20%;
-
 }
 html, body {
   width: 100%;
@@ -607,4 +611,5 @@ footer{padding:30px 0;color:#c0c0c0;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 
