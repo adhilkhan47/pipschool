@@ -334,5 +334,19 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.card, .row, .side-note, .price, .cta h2, .cta p, form').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
+
