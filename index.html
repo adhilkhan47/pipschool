@@ -9,7 +9,7 @@
   <meta property="og:description" content="Shaping the Market Leaders — Forex education that actually works." />
   <meta name="theme-color" content="#0a0f1f" />
   <link rel="stylesheet" href="pipschool.css">
-  
+  <link rel="stylesheet" href="pipschool-reveal.css">
   
 </head>
 <body>
@@ -307,7 +307,7 @@
   </section>
   <br>
   </footer>
-
+<script src="pipschool-reveal.js"></script>
 <script>
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
@@ -334,19 +334,5 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
-  <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.card, .row, .side-note, .price, .cta h2, .cta p, form').forEach(el => {
-    observer.observe(el);
-  });
-</script>
 </body>
 </html>
-
