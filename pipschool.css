@@ -475,6 +475,15 @@ footer{padding:30px 0;color:#c0c0c0;
     display: block;
   }
 }
+    .pricing{width: 90%;border-radius: 20px; overflow-x: auto; margin:3em auto; display:flex; gap: 1em;scroll-behavior: smooth;anchor-name: --carousel;scroll-snap-type: x mandatory;}
+.pricing::-webkit-scrollbar{display: none;}
+.price{flex: 0 0 20em;padding: 1em;border-radius: 1em;text-align: center;align-content: center;scroll-snap-align: start;}
+
+.pricing{scroll-marker-group: after;}
+.pricing::scroll-marker-group{display: flex;justify-content: center; gap: .5em;}
+.price::scroll-marker{content: ' ';height: 1em;width: 1em;background-color: #9b8b4a;border-radius: 50%;}
+.price::scroll-marker:target-current{background-color: #9b8b4a55} 
+
 
 }
 
@@ -608,3 +617,4 @@ footer{padding:30px 0;color:#c0c0c0;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
