@@ -475,14 +475,12 @@ footer{padding:30px 0;color:#c0c0c0;
     display: block;
   }
 }
-    .pricing{width: 90%;border-radius: 20px; overflow-x: auto; margin:3em auto; display:flex; gap: 1em;scroll-behavior: smooth;anchor-name: --carousel;scroll-snap-type: x mandatory;}
+.pricing{width: 90%;border-radius: 20px; overflow-x: auto; margin:3em auto; display:flex; gap: 1em;scroll-behavior: smooth;anchor-name: --carousel;scroll-snap-type: x mandatory;}
 .pricing::-webkit-scrollbar{display: none;}
+.pricing::scroll-button(right){ content: '›';border: none;background-color: #9b8b4a;color: #05092e;font-family: Consolas;font-size: 3rem; height: 60px;width: 60px;border-radius: 50%;padding-bottom: .2em;padding-left: .2em; cursor: pointer;position: fixed; position-anchor: --carousel;position-area: right center;translate: -50%;}
+.pricing::scroll-button(left){ content: '‹';border: none;background-color: #9b8b4a;color: #05092e;font-family: Consolas;font-size: 3rem; height: 60px;width: 60px;border-radius: 50%;padding-bottom: .2em;padding-right: .2em; cursor: pointer;position: fixed; position-anchor: --carousel;position-area: left center;translate: 50%;}
+.pricing::scroll-button(right):disabled, .carousel::scroll-button(left):disabled{opacity: 0.3; cursor:auto;}
 .price{flex: 0 0 20em;padding: 1em;border-radius: 1em;text-align: center;align-content: center;scroll-snap-align: start;}
-
-.pricing{scroll-marker-group: after;}
-.pricing::scroll-marker-group{display: flex;justify-content: center; gap: .5em;}
-.price::scroll-marker{content: ' ';height: 1em;width: 1em;background-color: #9b8b4a;border-radius: 50%;}
-.price::scroll-marker:target-current{background-color: #9b8b4a55} 
 
 
 }
@@ -617,4 +615,5 @@ footer{padding:30px 0;color:#c0c0c0;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 
